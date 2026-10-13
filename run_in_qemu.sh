@@ -15,7 +15,7 @@ cp $OVMF_CODE_FILE ovmf/
 OVMF_CODE=ovmf/OVMF_CODE.4m.fd
 OVMF_VARS=ovmf/OVMF_VARS.4m.fd
 
-IMAGE=image/mechanix-os-qemu.raw
+IMAGE=image/mechanix-os-qemu-simu.raw
 
 qemu-system-x86_64 \
   -enable-kvm \
