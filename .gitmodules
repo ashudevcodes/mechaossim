@@ -1,0 +1,7 @@
+[submodule "mechanix-gui"]
+	path = mechanix-gui
+	url = git@github.com:ashudevcodes/mechanix-gui.git
+
+[submodule "mecha-make"]
+	path = mecha-make
+	url = git@github.com:ashudevcodes/mecha-make.git
