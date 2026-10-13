@@ -1,0 +1,8 @@
+*.raw
+*.rpm
+*.fd
+
+shared/mechanix-app/*
+shared/mechanix-services/*
+!shared/mechanix-app/.gitkeep
+!shared/mechanix-services/.gitkeep
