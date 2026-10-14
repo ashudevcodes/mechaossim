@@ -1,36 +1,39 @@
-# Mecha OS in QEMU
+# Mecha OS in QEMU Sim
 
-- first you need qemu raw image file you can build using this [mecha-make](./mecha-make) repo
-- you can find full build instruction in readme
+QEMU raw image is what we need to simulate the Mecha ecosystem
+This will help [mecha-make](./mecha-make) build the image file
+
+build instructions are in the README
 
 ```sh
 mkosi --profile=mqs -f build
 ```
 
-after having .raw file move it into `image` folder. project `root directory`
+after building the `.raw` image, move it into the `image/` folder in the project root directory `this was require because qemu script need this`
+
 ```sh
-#find -name mechanix-os-qemu-simu.raw
+# find -name mechanix-os-qemu-sim.raw
 
-mv mecha-make/mechanix-os-qemu-simu.raw image/
-
+mv mecha-make/mechanix-os-qemu-sim.raw image/
 ```
 
-# for using mecha app or services
+# compile mecha apps or services
 
-i need to compile it myself and create an rpm package to install using `dnf`
-inside `qemu` [mechanix-gui](./mechanix-gui/)
+apps and services are compiled by ourselves for x86 cpus. then create an RPM package,
+which is used by the `dnf` package manager to install inside qemu.
+the source code of the mechanix first party applications and services is here [mechanix-gui](./mechanix-gui/)
 
-``` sh
+```sh
 cargo install cargo-generate-rpm
 cargo build --release -p [mechanix-package-name]
 cargo generate-rpm
-
 ```
-# share file and folder between host and qemu
 
-- this thing was automatic done if you build image using `mqs` mkosi profile
+# sharing files and folders between host and QEMU
 
-> command will run inside qemu `not in host machine`
+this will setup automatically if you build image with the `mqs` mkosi profile
+
+> run this command inside QEMU, **not** on the host machine
 ```sh
 sudo mount -t 9p -o trans=virtio,version=9p2000.L share /mnt
 ```
