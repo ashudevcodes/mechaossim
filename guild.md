@@ -1,7 +1,7 @@
 # Mecha OS in QEMU Sim
 
 QEMU raw image is what we need to simulate the Mecha ecosystem
-This will help [mecha-make](./mecha-make) build the image file
+This will help [mecha-make](https://github.com/ashudevcodes/mecha-make) build the image file
 
 build instructions are in the README
 
@@ -21,7 +21,7 @@ mv mecha-make/mechanix-os-qemu-sim.raw image/
 
 apps and services are compiled by ourselves for x86 cpus. then create an RPM package,
 which is used by the `dnf` package manager to install inside qemu.
-the source code of the mechanix first party applications and services is here [mechanix-gui](./mechanix-gui/)
+the source code of the mechanix first party applications and services is here [mechanix-gui](https://github.com/ashudevcodes/mechanix-gui)
 
 ```sh
 cargo install cargo-generate-rpm
