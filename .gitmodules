@@ -7,3 +7,8 @@
 	path = mecha-make
 	url = git@github.com:ashudevcodes/mecha-make.git
     branch = null_to_working_qemu_image
+
+[submodule "mechanix-comp"]
+	path = mechanix-comp
+	url = git@github.com:ashudevcodes/mechanix-comp.git
+    branch = github_action_build
